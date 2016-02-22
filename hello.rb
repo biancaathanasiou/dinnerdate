@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get('/') do
-  erb :hello
+  erb :welcomeguest
 end
 
 get('/:name') do
@@ -15,9 +15,11 @@ get('/:name/:time') do
   erb :choosetime
 end
 
+
 post('/signup') do
   puts params[:name]
   puts params[:email]
 
-  "Thank you!"
+erb :venues
+ 
 end
