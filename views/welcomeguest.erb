@@ -1,37 +1,51 @@
 <!doctype html>
-<title>Hello from Sinatra</title>
+
+<head>
+
+<title>Plan Your Dinner Party</title>
+
+<link href='dist/css/bootstrap.css'rel='stylesheet'>
+<link rel="stylesheet"type="text/css"href="/dinnerdate.css">
+
+</head>
+
+<body>
+
+  <header>
+
 <% if @name %>
   <h1>Hello! Welcome to Dinner Date</h1>
 <% else %>
   <h1>Hello World!</h1>
 <% end %>
 
+  </header>
+
 <div id="contact-form">
   <h1>Plan your party</h1>
   <form method="post" action="/signup">
 
     <label for="name">Name: </label>
-    <input type="text" id="name" name="name" value="" placeholder="Rob Paskin" required="required" autofocus="autofocus"/>
+    <input type="text" id="name" name="name" value="" placeholder="Rob Paskin" required="required" autofocus="autofocus"/><br/><br/>
 
     <label for="email">Email address: </label>
-    <input type="email" id="email" name="email" value="" placeholder="rob@example.com" required="required"/>
+    <input type="email" id="email" name="email" value="" placeholder="rob@example.com" required="required"/><br/><br/>
 
     <label for="occasion">Occasion: </label>
-    <input type="text" id="occasion" name="occasion" value="" placeholder="Birthday party" required="required"/>
+    <input type="text" id="occasion" name="occasion" value="" placeholder="Birthday party" required="required"/><br/><br/>
 
     <label for="guests">Number of guests: </label>
-    <input type="number" id="guests" name="guests" value="" placeholder="8" required="required"/>
+    <input type="number" id="guests" name="guests" value="" placeholder="8" required="required"/><br/><br/>
 
     <label for="location">Location: </label>
-    <input type="text" id="location" name="location" value="" placeholder="Hackney" required="required"/>
+    <input type="text" id="location" name="location" value="" placeholder="Hackney" required="required"/><br/><br/>
 
     <label for="budget">Budget £ (per head): </label>
-    <input type="number" id="budget" name="budget" value="" placeholder="50" required="required"/>
-
-
-
+    <input type="number" id="budget" name="budget" value="" placeholder="50" required="required"/><br/><br/>
 
 
     <input type="submit" value="submit" id="submit-button">
   </form>
 </div>
+
+</body>

@@ -1,0 +1,37 @@
+body {
+	text-align: center;
+	background: url("images/natural_paper.png");
+}
+
+h1 {
+	color: white;
+	position: relative;
+	top: 40%;
+}
+
+header {
+	background: url("images/DinnerParty.jpg");
+	height: 400px;
+	text-align: center;
+}
+
+#venuelist {
+	padding-top: 5%
+}
+
+
+.venue1 {
+	border:1px dashed black;
+	background: gray;
+	display: inline-block;
+	border-radius: 20px;
+	margin-bottom: 40px
+}
+
+.venue1 h2 {
+	color: black;
+}
+
+.venue1 img {
+	width: 100%;
+}

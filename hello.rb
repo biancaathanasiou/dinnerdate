@@ -21,5 +21,7 @@ post('/signup') do
   puts params[:email]
 
 erb :venues
- 
+
 end
+
+
