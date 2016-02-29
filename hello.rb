@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'twitter'
+
 
 get('/') do
   erb :hello
@@ -23,6 +23,15 @@ get('/twitter') do
 	end
 
 end
+
+get('/chefs') do
+  erb :chefs
+end
+
+get('/billing') do
+  erb :billingpage
+end
+
 
 get('/:name') do
   @name = params[:name].capitalize
