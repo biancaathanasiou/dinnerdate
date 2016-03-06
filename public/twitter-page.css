@@ -5,10 +5,15 @@ body {
 
 h1 {
 	color: white;
-	font-size: 52px;
-	position: relative;
-	top: 40%;
 	font-family: 'Lobster', cursive;
+	font-size: 40px;
+	position: absolute;
+	z-index: 0;
+	top: 20%;
+	margin: 100px 0 100px 0;
+	text-align: center;
+	background-color: black;
+	padding: 10px;
 }
 
 h2 {
@@ -26,6 +31,10 @@ header {
 	margin: 20px;
 }
 
+.container {
+    position: relative;
+}
+
 #footer {
 	background-color: #FF8000;
 	position: relative;
@@ -33,30 +42,10 @@ header {
 	text-align: center;
 }
 
-/*Venue Page*/
-
-#venuelist {
-	padding-top: 5%
+#tweet-button {	
+	position: absolute;
+	z-index: 0;
+	top: 50%;
+	text-align: center;
+	margin: auto;
 }
-
-#navbar-brand
-			{
-
-	padding: 0;			
-}
-
-
-.venue1 {
-	border:1px dashed black;
-	background: gray;
-	display: inline-block;
-	border-radius: 20px;
-	margin-bottom: 40px
-}
-
-
-.venue1 img {
-	width: 100%;
-}
-
-
