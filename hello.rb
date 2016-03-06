@@ -32,6 +32,27 @@ get('/billing') do
   erb :billingpage
 end
 
+get('/venuepg1') do
+	erb :venuepg1
+end
+
+get('/venuepg2') do
+	erb :venuepg1
+end
+
+get('/venuepg3') do
+	erb :venuepg1
+end
+
+get('/venuepg4') do
+	erb :venuepg1
+end
+
+get('/venues') do
+	erb :venues
+end
+
+
 
 post('/venues') do
   puts params[:name]

@@ -51,4 +51,10 @@ header {
 	width: 100%;
 }
 
+#venuepgs {
+	padding-top: 5%
+}
 
+#venuetext {
+	border-radius: 20px;
+}
