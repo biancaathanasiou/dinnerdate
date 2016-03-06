@@ -32,8 +32,10 @@ get('/billing') do
   erb :billingpage
 end
 
-get('/confirmation') do
-  erb :confirmation
+
+get('/:name') do
+  @name = params[:name].capitalize
+  erb :hello
 end
 
 
