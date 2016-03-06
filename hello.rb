@@ -32,7 +32,7 @@ get('/billing') do
   erb :billingpage
 end
 
-<<<<<<< HEAD
+
 get('/venuepg1') do
 	erb :venuepg1
 end
@@ -54,12 +54,12 @@ get('/venues') do
 end
 
 
-=======
+
 get('/confirmation') do
   erb :confirmation
 end
 
->>>>>>> origin/master
+
 
 post('/venues') do
   puts params[:name]
