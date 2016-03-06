@@ -38,15 +38,15 @@ get('/venuepg1') do
 end
 
 get('/venuepg2') do
-	erb :venuepg1
+	erb :venuepg2
 end
 
 get('/venuepg3') do
-	erb :venuepg1
+	erb :venuepg3
 end
 
 get('/venuepg4') do
-	erb :venuepg1
+	erb :venuepg4
 end
 
 get('/venues') do
