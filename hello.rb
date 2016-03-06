@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'pony'
 
 
 get('/') do
@@ -25,11 +26,34 @@ get('/twitter') do
 end
 
 get('/chefs') do
+  puts params[:name]
+  puts params[:email]
+  puts params[:occasion]
+
+
+ @email = params[:email]
+ @name = params[:name]
+ @occasion = params[:occasion]
   erb :chefs
 end
 
 get('/billing') do
-  erb :billingpage
+  
+  	erb :billingpage
+
+end
+
+post('/billing') do
+  puts params[:name]
+  puts params[:email]
+  puts params[:occasion]
+
+
+ @email = params[:email]
+ @name = params[:name]
+ @occasion = params[:occasion].downcase
+erb :billingpage
+
 end
 
 
@@ -48,11 +72,6 @@ end
 get('/venuepg4') do
 	erb :venuepg1
 end
-
-get('/venues') do
-	erb :venues
-end
-
 
 
 get('/confirmation') do
@@ -74,3 +93,44 @@ erb :venues
 
 end
 
+
+post('/confirm') do
+puts params[:name]
+puts params[:email]
+
+email = params[:email]
+@name = params[:name]
+
+
+Pony.options = {
+	:via => 'smtp',
+	:via_options => {
+		:address => 'smtp.mailgun.org',
+		:port => '587',
+		:enable_starttls_auto => true,
+		:authentication => :plain,
+		# This is the Default SMTP Login from earlier:
+		:user_name => 'postmaster@sandbox5a37e418ee9f47748057c8e40d6af588.mailgun.org',
+		# This is your Default Password:
+		:password => '7cb9d4ccc40900718ab1b29c580b2a38'
+	}
+}
+
+
+message = {
+	:from => 'hello@example.com',
+	:to => 'Jess <jess.astbury@hotmail.com>',
+	:subject => 'Your confirmation from Dinner Date!',
+	:headers => { 'Content-Type' => 'text/html' },
+	:body => erb(:email)
+
+
+	#:body => 'Thanks for filling in the form #{@name}!<br/>
+	#Hope you have a great time!'
+}
+
+Pony.mail(message)
+
+erb :emailconfirm
+
+end

@@ -7,6 +7,7 @@
 
 <link href='dist/css/bootstrap.css'rel='stylesheet'>
 <link rel="stylesheet"type="text/css"href="/dinnerdate.css">
+<link rel="shortcut icon" href="images/favicon.ico" />
 
 </head>
 
@@ -14,27 +15,30 @@
 
   <header>
 
-  <h1>Well chosen <%= @name %>! Confirm your booking now...</h1>
+  <h1>Well chosen <%= @name %>!</h1>
 
   </header>
 
-<div id="billing-form">
+  <br/><h2>Check details below and confirm your booking...</h2>
+
+<div class="form">
+
+    <form method="post" action="/confirm">
 
 <p>
-	NAME: <%= @name %><br/><br/> <!--Anyone know why this name isn't showing up?-->
-  DATE: (date) <br/><br/><!-- We should probs add this on the form! -->
-  VENUE COST: (cost)<br/><br/>
-  CHEF COST: (cost) <br/><br/> <!-- Could be cost * no. of guests if we're feeling fancy -->
-	TOTAL COST:  (venue cost + check cost)<br/><br/>
+	<br/><strong>NAME: <%=@name %></strong><br/><br/> <!--Anyone know why this name isn't showing up?-->
+  <strong>DATE: <%= @occasion %></strong><br/><br/><!-- We should probs add this on the form! -->
+  <strong>VENUE COST: </strong>(cost)<br/><br/>
+  <strong>CHEF COST:</strong> (cost) <br/><br/> <!-- Could be cost * no. of guests if we're feeling fancy -->
+	<strong>TOTAL COST:</strong>  (venue cost + check cost)<br/><br/>
 </p>
 
-    <input type="submit" value="submit" id="submit-button">
-    (Jess working on how to send out an email with details)
+    <input type="submit" value="Confirm" id="submit-button">
   <br/><br/>
 </div>
 
 <h2><a href="/confirmation">Share the news with your friends!</a></h2>
-(Catherine working on how to send out a tweet with details)
+<br/><br/>
 
 <div id="footer">
   <div class="social-icon">
