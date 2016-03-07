@@ -73,14 +73,10 @@ Pony.options = {
 
 message = {
 	:from => 'hello@example.com',
-	:to => '#{@name} <jess.astbury@hotmail.com>',
-	:subject => 'Your confirmation from Dinner Date #{@name}!',
+	:to => "#{@name} <#{@email}>",
+	:subject => "Your confirmation from Dinner Date #{@name}!",
 	:headers => { 'Content-Type' => 'text/html' },
 	:body => erb(:email)
-
-
-	#:body => 'Thanks for filling in the form #{@name}!<br/>
-	#Hope you have a great time!'
 }
 
 Pony.mail(message)
