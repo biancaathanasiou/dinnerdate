@@ -82,6 +82,178 @@
   </form><br/>
 </div>
 
+<!--VENUE PAGE-->
+<p>----------</p>
+
+#<header>
+
+<h1>Hi <%= @name %>! Let's get planning your <%= @occasion %><br/><br>First, pick your venue...</h1>
+</header>
+
+<div id = "venuelist"
+
+<div class="container">
+  <div class="row">
+
+<div class = "venue1 col-md-5">
+
+  <a href="/chefs">
+
+<img src = "images/forum.jpg">
+    <h2>Forum Bar ~ East</h2>
+
+    <a href="/venuepg1">
+    <h3>More info</h3>
+
+  </a>
+
+
+</div>
+
+  </a>
+
+<div class = "venue1 col-md-5 col-md-offset-1">
+
+    <a href="/chefs">
+
+<img src = "images/drinkshopdo.jpg">
+<h2>Drink Shop Do ~ North</h2>
+
+</a>
+
+  <a href="/venuepg2">
+    <h3>More info</h3>
+
+  </a>
+
+
+
+</div>
+
+<div class = "venue1 col-md-5">
+
+  <a href="/chefs">
+
+<img src = "images/tikibar.jpg">
+<h2>Pacific Cove ~ West</h2>
+
+</a>
+
+  <a href="/venuepg3">
+    <h3>More info</h3>
+
+  </a>
+
+
+</div>
+
+<div class = "venue1 col-md-5 col-md-offset-1">
+
+<a href="/chefs">
+
+<img src = "images/wishart.jpg">
+<h2>Wishart ~ South</h2>
+
+</a>
+
+  <a href="/venuepg4">
+    <h3>More info</h3>
+
+  </a>
+
+
+</div>
+
+</div>
+
+</div>
+
+<header>
+
+<h1>Good choice <%= @name %>!<br/>Now, let's pick your chef for the evening</h1>
+</header>
+
+<div id = "venuelist"
+
+<div class="container">
+  <div class="row">
+
+<div class = "venue1 col-md-5">
+
+  <a href="/billing">
+
+<img src = "images/thathungrychef.jpg">
+<h2>That Hungry Chef ~ Indian/Fusion</h2>
+
+</a>
+
+</div>
+
+<div class = "venue1 col-md-5 col-md-offset-1">
+
+  <a href="/billing">
+
+<img src = "images/alittlelusciousness.jpg">
+<h2>A Little Lusciousness ~ British</h2>
+
+</a>
+
+</div>
+
+<div class = "venue1 col-md-5">
+
+  <a href="/billing">
+
+<img src = "images/nordish.jpg">
+<h2>M&M ~ Nordish</h2>
+
+</a>
+
+</div>
+
+<div class = "venue1 col-md-5 col-md-offset-1">
+
+  <a href="/billing">
+
+<img src = "images/gabriel.jpg">
+<h2>The Water House Project ~ British</h2>
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+  <header>
+
+  <h1>Well chosen <%= @name %>!</h1>
+
+  </header>
+
+  <br/><h2>Check details below and confirm your booking...</h2>
+
+<div class="form">
+
+    <form method="post" action="/confirm">
+
+<p>
+  <br/><strong>NAME: <%=@name %></strong><br/><br/> <!--Anyone know why this name isn't showing up?-->
+  <strong>DATE: <%= @occasion %></strong><br/><br/><!-- We should probs add this on the form! -->
+  <strong>VENUE COST: </strong>(cost)<br/><br/>
+  <strong>CHEF COST:</strong> (cost) <br/><br/> <!-- Could be cost * no. of guests if we're feeling fancy -->
+  <strong>TOTAL COST:</strong>  (venue cost + check cost)<br/><br/>
+</p>
+
+    <input type="submit" value="Confirm" id="submit-button">
+  <br/><br/>
+</div>
+
+<h2><a href="/confirmation">Share the news with your friends!</a></h2>
+<br/><br/>
+
 <div id="footer">
   <div class="social-icon">
     <a target="_blank" href="https://www.facebook.com/freecakesuk/"><img src='images/facebook.png'></a>
