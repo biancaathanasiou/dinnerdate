@@ -120,7 +120,7 @@ Pony.options = {
 message = {
 	:from => 'hello@example.com',
 	:to => 'Jess <jess.astbury@hotmail.com>',
-	:subject => 'Your confirmation from Dinner Date!',
+	:subject => 'Your confirmation from Dinner Date #{@name}!',
 	:headers => { 'Content-Type' => 'text/html' },
 	:body => erb(:email)
 
