@@ -79,4 +79,15 @@ header {
 
 #venuetext {
 	border-radius: 20px;
+<<<<<<< HEAD
+=======
+	text-align: left;
+	padding-left: 20px;
+}
+
+#choices {
+
+	padding-bottom: 60px;
+	margin-bottom: 50px;
+>>>>>>> origin/master
 }
