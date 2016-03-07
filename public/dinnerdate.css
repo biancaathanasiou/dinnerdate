@@ -103,4 +103,15 @@ header {
 	padding-bottom: 60px;
 	margin-bottom: 50px;
 
+<<<<<<< Updated upstream
+=======
+}
+
+.form-group1 {
+	display: inline;
+}
+
+.venue1 col-md-10 {
+	display: inline-block;
+>>>>>>> Stashed changes
 }
