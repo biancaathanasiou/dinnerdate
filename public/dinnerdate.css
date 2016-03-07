@@ -103,9 +103,6 @@ header {
 	padding-bottom: 60px;
 	margin-bottom: 50px;
 
-<<<<<<< Updated upstream
-=======
-}
 
 .form-group1 {
 	display: inline;
@@ -113,5 +110,19 @@ header {
 
 .venue1 col-md-10 {
 	display: inline-block;
->>>>>>> Stashed changes
+
+
+	input[type=checkbox].css-checkbox{ display: none; }
+
+.css-label {
+  display: inline-block;
+  height:600px;
+  width: 600px;
+  background-image:url(/drinkshopdo.jpg);
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+ border: 2px solid red;
 }
