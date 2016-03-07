@@ -43,32 +43,17 @@ get('/venuepg4') do
 end
 
 
-get('/confirmation') do
-  erb :confirmation
-end
 
-
-
-post('/venues') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion].downcase
-erb :venues
-
-end
-
-
-post('/confirm') do
+post('/confirmation') do
 puts params[:name]
 puts params[:email]
+puts params[:occasion]
+puts params[:guests]
 
-email = params[:email]
+@email = params[:email]
 @name = params[:name]
+@guests = params[:guests]
+@occasion = params[:occasion].downcase
 
 
 Pony.options = {
@@ -88,7 +73,7 @@ Pony.options = {
 
 message = {
 	:from => 'hello@example.com',
-	:to => 'Jess <jess.astbury@hotmail.com>',
+	:to => '#{@name} <jess.astbury@hotmail.com>',
 	:subject => 'Your confirmation from Dinner Date #{@name}!',
 	:headers => { 'Content-Type' => 'text/html' },
 	:body => erb(:email)
