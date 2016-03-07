@@ -33,6 +33,25 @@ header {
 	text-align: center;
 }
 
+/*Homepage*/
+
+.form {
+	display: inline-block;
+	background: white;
+	border-radius: 20px;
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+#submit-button {
+	background-color: #FF8000;
+	font-size: 25px;
+	font-color: white;
+	border-radius: 5px;
+}
+
 /*Venue Page*/
 
 #venuelist {
@@ -47,16 +66,36 @@ header {
 
 
 .venue1 {
-	border:1px dashed black;
-	background: gray;
+	background: url("images/pattern.jpg");
 	display: inline-block;
 	border-radius: 20px;
-	margin-bottom: 40px
+	margin-bottom: 40px;
+	padding-bottom: 10px;
 }
 
 
 .venue1 img {
 	width: 100%;
+	margin-top: 5%;
+	border-radius: 20px;
 }
 
 
+#venuepgs {
+	padding-top: 5%
+}
+
+#venuetext {
+	border-radius: 20px;
+<<<<<<< HEAD
+=======
+	text-align: left;
+	padding-left: 20px;
+}
+
+#choices {
+
+	padding-bottom: 60px;
+	margin-bottom: 50px;
+>>>>>>> origin/master
+}
