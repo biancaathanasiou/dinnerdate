@@ -25,37 +25,6 @@ get('/twitter') do
 
 end
 
-get('/chefs') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion]
-  erb :chefs
-end
-
-get('/billing') do
-  
-  	erb :billingpage
-
-end
-
-post('/billing') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion].downcase
-erb :billingpage
-
-end
-
 
 get('/venuepg1') do
 	erb :venuepg1

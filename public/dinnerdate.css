@@ -21,6 +21,13 @@ header {
 	text-align: center;
 }
 
+.comment {
+	background: #FF8000;
+	opacity: 0.8;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
 .social-icon img {
 	display: inline-block;
 	margin: 20px;
@@ -87,8 +94,6 @@ header {
 
 #venuetext {
 	border-radius: 20px;
-<<<<<<< HEAD
-=======
 	text-align: left;
 	padding-left: 20px;
 }
@@ -97,5 +102,5 @@ header {
 
 	padding-bottom: 60px;
 	margin-bottom: 50px;
->>>>>>> origin/master
+
 }
