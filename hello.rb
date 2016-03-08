@@ -45,14 +45,18 @@ end
 
 
 post('/confirmation') do
+
 puts params[:name]
 puts params[:email]
 puts params[:occasion]
 puts params[:guests]
+puts params[:date]
+
 
 @email = params[:email]
 @name = params[:name]
 @guests = params[:guests]
+@date = params[:date]
 @occasion = params[:occasion].downcase
 
 
@@ -74,7 +78,7 @@ Pony.options = {
 message = {
 	:from => 'hello@example.com',
 	:to => "#{@name} <#{@email}>",
-	:subject => "Your confirmation from Dinner Date #{@name}!",
+	:subject => "Your confirmation from Dinner Date, #{@name}!",
 	:headers => { 'Content-Type' => 'text/html' },
 	:body => erb(:email)
 }
