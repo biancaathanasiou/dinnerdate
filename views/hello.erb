@@ -88,7 +88,7 @@
 <!--VENUE PAGE-->
 
 <div class="comment">
-    <h1>Hi <%= @name %>! Let's get planning your <%= @occasion %><br/><br>First, pick your venue...</h1>
+    <h1>Hi <%= @name %>! Let's get planning your event.<br/><br>First, pick your venue...</h1>
 </div>
 
 <div id = "venuelist">
@@ -203,12 +203,6 @@
 <!-- CHEF SECTION-->
 
 
-<header>
-
-<h1>Good choice <%= @name %>!<br/>Now, let's pick your chef for the evening</h1>
-</header>
-
-
 <div id = "venuelist">
 
 
@@ -227,7 +221,7 @@
 <div class="comment">
 
 <h1>Good choice <%= @name %>!<br/>Now, let's pick your chef for the evening</h1>
-</div>
+</div><br/><br/><br/>
 
 
 <div class="container">
@@ -293,30 +287,15 @@
 
 <!--BILLING PAGE-->
 
-  <div class="comment">
-
-   <h1>Well chosen <%= @name %>!</h1>
-
-  </div>
-
-  <br/><h2>Check details below and confirm your booking...</h2>
-
-<div class="form">
-
-<p>
-  <br/><strong>NAME: <%=@name %></strong><br/><br/> 
-  <strong>DATE: <%= @date %></strong><br/><br/>
-  <strong>VENUE COST: </strong>(cost)<br/><br/>
-  <strong>CHEF COST: price per head x <%= @guests %></strong> (cost) <br/><br/>
-  <strong>TOTAL COST:</strong>  (venue cost + check cost)<br/><br/>
-</p>
-
+<div class="comment">
+<h1>All Chosen?</h1></div>
+<br/><br/>
+<h2>Click below to submit your booking request...</h2>
     <input type="submit" value="Confirm" id="submit-button">
 
      </form>
 
   <br/><br/>
-</div>
 
 
 
