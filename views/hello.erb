@@ -32,23 +32,6 @@
       </a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Plan <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Review</a></li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!--End of navigation bar-->
 
 
   <header>
@@ -61,12 +44,12 @@
 
   </header>
 
-
+<form>
 <div class="form">
 
   <h2>Plan your party</h2><br/>
   
-  <form method="post" action="/confirmation">
+  <form method="post" action="/emailconfirm">
 
     <label for="name">Name: </label>
     <input type="text" id="name" name="name" value="" placeholder="Sarah Smith" required="required" autofocus="autofocus"/><br/><br/>
@@ -82,7 +65,7 @@
 
     <label for="date">Date: </label>
     <input type="text" id="date" name="date" value="" placeholder="29/06/16" required="required"/><br/><br/>
-
+</div>
 
 
 <!--VENUE PAGE-->
@@ -115,7 +98,7 @@
       
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <input type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="65">
 <img src = "images/forum.jpg">
 <h2>Forum Bar ~ East</h2>
 </label>
@@ -157,7 +140,7 @@
       
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <input type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
 <img src = "images/drinkshopdo.jpg">
 <h2>Drink Shop Do ~ North</h2>
 </label>
@@ -194,7 +177,7 @@
 
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+  <input type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
 <img src = "images/tikibar.jpg">
 <h2>Pacific Cove ~ West</h2>
 </label>
@@ -237,7 +220,7 @@
 <div class = "venue1 col-md-5">
 
 <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+  <input type="radio" name="inlineRadioOptions1" id="inlineRadio4" value="option4">
 <img src = "images/wishart.jpg">
 <h2>Wishart ~ South</h2>
 </label>
@@ -311,7 +294,7 @@
       
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+  <input type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5">
 <img src = "images/thathungrychef.jpg">
 <h2>That Hungry Chef ~ Indian/Fusion</h2>
 </label>
@@ -352,7 +335,7 @@
 
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
+  <input type="radio" name="inlineRadioOptions2" id="inlineRadio6" value="option6">
 <img src = "images/alittlelusciousness.jpg">
 <h2>A Little Lusciousness ~ British</h2>
 </label>
@@ -388,7 +371,7 @@
 
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio7" value="option7">
+  <input type="radio" name="inlineRadioOptions2" id="inlineRadio7" value="option7">
 <img src = "images/nordish.jpg">
 <h2>M&M ~ Nordish</h2>
 </label>
@@ -430,7 +413,7 @@
 
 <div class = "venue1 col-md-5">
   <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio8" value="option8">
+  <input type="radio" name="inlineRadioOptions2" id="inlineRadio8" value="option8">
 <img src = "images/gabriel.jpg">
 <h2>The Water House Project ~ British</h2>
 </label>
@@ -486,9 +469,10 @@
 <br/><br/>
 <h2>Click below to submit your booking request...</h2>
     <input type="submit" value="Confirm" id="submit-button">
+</form>
+   
 
-     </div>
-   </div>
+ 
 
   <br/><br/>
 
