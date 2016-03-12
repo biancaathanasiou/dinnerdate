@@ -5,14 +5,6 @@ require 'pony'
 set :server, 'webrick'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "hCL0HG66BxBElgiBFGKjAygcR"
-    config.consumer_secret     = "piMNreMrGSiJkzYOa3hxncDksJYqrr6gOrhwYgiZyXjQgjvzhd"
-    config.access_token        = "237242667-rIpUFj3y8Gh1NDIdydorNGy98lsxtB3hc0n9Ptxr"
-    config.access_token_secret = "PJYf2VgLCwgPu4mQB3TJXsBRRC2YYbg7dVZC1Tki5Yvrs"
-
-end
-
 
 get('/') do
   erb :hello1
@@ -35,13 +27,19 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
-post('/twitter') do
+get('/twitter') do
 
-client.update("I tweeted!")
-	
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
+    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
+    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
+    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
+
 end
 
-get('/twitter') do
+@name = params[:name]
+
+client.update('#{@name} has booked for their #DinnerDate! Why not join them at http://dinnerdate.com')
 
 erb :twitter
 

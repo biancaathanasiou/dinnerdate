@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'Twitter'
 
 client = Twitter::REST::Client.new do |config|
