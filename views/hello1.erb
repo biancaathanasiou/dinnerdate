@@ -1,0 +1,323 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+  <title>Plan Your Dinner Party</title>
+
+  <script src="jquery.js"></script>
+  <link href='dist/css/bootstrap.css'rel='stylesheet'>
+  <link rel="stylesheet"type="text/css"href="/dinnerdate.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
+
+</head>
+
+<body>
+<!--Navigation bar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="navbar-brand" class="navbar-brand" href="/hello.rb">
+        <img alt="Dinner Date" src="images/dinner-date-small.gif">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Plan <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Review</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--End of navigation bar-->
+
+
+  <header>
+
+    <% if @name %>
+      <h1>Hello <%= @name %>! Welcome to Dinner Date </h1>
+    <% else %>
+      <h1>Hello! Welcome to Dinner Date</h1>
+    <% end %>
+
+  </header>
+
+
+<div class="form">
+
+  <h2>Plan your party</h2><br/>
+  
+  <form method="post" action="/confirmation">
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" value="" placeholder="Sarah Smith" required="required" autofocus="autofocus"/><br/><br/>
+
+    <label for="email">Email address: </label>
+    <input type="email" id="email" name="email" value="" placeholder="sarah@example.com" required="required"/><br/><br/>
+
+    <label for="occasion">Occasion: </label>
+    <input type="text" id="occasion" name="occasion" value="" placeholder="Birthday party" required="required"/><br/><br/>
+
+    <label for="guests">Number of guests: </label>
+    <input type="number" id="guests" name="guests" value="" placeholder="8" required="required"/><br/><br/>
+
+    <label for="date">Date: </label>
+    <input type="text" id="date" name="date" value="" placeholder="29/06/16" required="required"/><br/><br/>
+
+</div>
+
+<!--VENUE PAGE-->
+
+<header>
+
+
+<div class="comment">
+    <h1>Hi <%= @name %>! Let's get planning your event.<br/><br>First, pick your venue...</h1>
+</div>
+
+
+<div id = "venuelist">
+
+
+<!-- <form class="form-horizontal">-->
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Multiple Checkboxes (inline) -->
+
+
+
+
+<div class="container">
+  <div class="row">
+
+<div class="form-group1">
+
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      
+<div class = "venue1 col-md-10">
+<img src = "images/forum.jpg">
+<h2>Forum Bar ~ East</h2>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Find out more
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+     <p> helloooo</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+    </label>
+
+
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      
+<div class = "venue1 col-md-10">
+<img src = "images/drinkshopdo.jpg">
+<h2>Drink Shop Do ~ North</h2>
+</div>
+
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+
+<div class = "venue1 col-md-10">
+<img src = "images/tikibar.jpg">
+<h2>Pacific Cove ~ West</h2>
+</div>
+
+
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
+
+<div class = "venue1 col-md-10">
+<img src = "images/wishart.jpg">
+<h2>Wishart ~ South</h2>
+</div>
+
+
+<div class="form-group1">
+<input id="checkboxid" type="checkbox" class="css-checkbox">
+<label for="checkboxid" class="css-label"></label>
+</div>
+
+
+
+
+    </label>
+  </div>
+</div>
+
+
+</fieldset>
+<!-- </form>-->
+
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- CHEF SECTION-->
+
+
+<div id = "venuelist">
+
+
+
+<!-- <form class="form-horizontal">-->
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Multiple Checkboxes (inline) -->
+
+
+<!--CHEF PAGE-->
+
+<div class="comment">
+
+<h1>Good choice <%= @name %>!<br/>Now, let's pick your chef for the evening</h1>
+</div><br/><br/><br/>
+
+
+<div class="container">
+  <div class="row">
+
+<div class="form-group">
+
+
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      
+<div class = "venue1 col-md-10">
+<img src = "images/thathungrychef.jpg">
+<h2>That Hungry Chef ~ Indian/Fusion</h2>
+</div>
+
+    </label>
+
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      
+<div class = "venue1 col-md-10">
+<img src = "images/alittlelusciousness.jpg">
+<h2>A Little Lusciousness ~ British</h2>
+</div>
+
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+
+<div class = "venue1 col-md-10">
+<img src = "images/nordish.jpg">
+<h2>M&M ~ Nordish</h2>
+</div>
+
+
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
+
+<div class = "venue1 col-md-10">
+<img src = "images/gabriel.jpg">
+<h2>The Water House Project ~ British</h2>
+</div>
+
+
+
+    </label>
+  </div>
+</div>
+
+
+</fieldset>
+<!-- </form>-->
+
+
+
+</div>
+
+
+</div>
+
+
+<!--BILLING PAGE-->
+
+<div class="comment">
+<h1>All Chosen?</h1></div>
+<br/><br/>
+<h2>Click below to submit your booking request...</h2>
+    <input type="submit" value="Confirm" id="submit-button">
+
+     </form>
+
+  <br/><br/>
+
+
+
+<h2><a href="/twitter">Share the news with your friends!</a></h2>
+<br/><br/>
+
+
+
+<div id="footer">
+  <div class="social-icon">
+    <a target="_blank" href="https://www.facebook.com/freecakesuk/"><img src='images/facebook.png'></a>
+    <a target="_blank" href="https://www.instagram.com/cake/"><img src='images/instagram.png'></a>
+    <a target="_blank" href="https://twitter.com/freecakesuk"><img src='images/twitter.png'></a>
+  </div>
+</div>
+
+</body>
+
+<script src="index.js"></script>
+
+</html>
