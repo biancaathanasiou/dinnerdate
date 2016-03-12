@@ -43,6 +43,9 @@ erb :twitter
 
 end
 
+get('/emailconfirm') do
+	erb :emailconfirm
+end
 
 post('/confirmation') do
 
@@ -51,6 +54,8 @@ puts params[:email]
 puts params[:occasion]
 puts params[:guests]
 puts params[:date]
+puts params[:inlineRadioOptions1]
+puts params[:inlineRadioOptions2]
 
 
 @email = params[:email]
@@ -58,6 +63,8 @@ puts params[:date]
 @guests = params[:guests]
 @date = params[:date]
 @occasion = params[:occasion].downcase
+@inlineRadioOptions1 = params[:inlineRadioOptions1]
+@inlineRadioOptions1 = params[:inlineRadioOptions2]
 
 
 #
