@@ -108,21 +108,12 @@ header {
 	display: inline;
 }
 
-.venue1 col-md-10 {
+.venue1 col-md-5 {
 	display: inline-block;
 
-
-	input[type=checkbox].css-checkbox{ display: none; }
-
-.css-label {
-  display: inline-block;
-  height:600px;
-  width: 600px;
-  background-image:url(/drinkshopdo.jpg);
-  background-repeat: no-repeat;
-  border: 2px solid transparent;
 }
 
-input[type=checkbox].css-checkbox:checked + label.css-label {
- border: 2px solid red;
-}
+
+
+
+
