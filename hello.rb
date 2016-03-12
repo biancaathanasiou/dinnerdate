@@ -1,31 +1,13 @@
 require 'sinatra'
+require 'twitter'
 require 'pony'
 
+set :server, 'webrick'
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
 get('/') do
   erb :hello
 end
-
-get('/twitter') do
-  twitter_api = Twitter::REST::Client.new do |config|
-	  config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
-	  config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
-	  config.access_token        = "08683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
-	  config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
-	end
-twitter_api.update("i tweeted")
-	cfg_tweets = twitter_api.search("CodeFirstGirls")
-
-	cfg_tweets.each do |tweet|
-	  puts "#{tweet.user.screen_name}: #{tweet.text}"
-
-	  erb :template
-
-
-	end
-
-end
-
 
 get('/venuepg1') do
 	erb :venuepg1
@@ -43,6 +25,23 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
+get('/twitter') do
+
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
+    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
+    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
+    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
+
+end
+
+@name = params[:name]
+
+client.update('#{@name} has booked for their #DinnerDate! Why not join them at http://dinnerdate.com')
+
+erb :twitter
+
+end
 
 
 post('/confirmation') do

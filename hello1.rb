@@ -45,6 +45,7 @@ erb :twitter
 
 end
 
+
 post('/confirmation') do
 
 puts params[:name]
@@ -59,50 +60,6 @@ puts params[:date]
 @guests = params[:guests]
 @date = params[:date]
 @occasion = params[:occasion].downcase
-
-
-
-# Twitter test
-#   twitter_api = Twitter::REST::Client.new do |config|
-#	  config.consumer_key        = "qHLQaXq1TvWuU6tCYqhcfTP53"
-#	  config.consumer_secret     = "E1027APLZnxFGTx39m6LDfbeT30WrCwTJT5R4Fs4RC8DN7Vmz4"
-#	  config.access_token        = "29703751-8pefVB9fnoPBcTRnBuTomoUtuN2YE11vuXzwdAvtz"
-#	  config.access_token_secret = "YBzKoqqvgA04FqIdCmLlNYspS0uw1I5X2mvFDYYFCBb3L"
-#	end
-#twitter_api.update("#{@name} has booked #{@location} for their #DinnerDate! Why not join them? dinnerdate.com")
-#	cfg_tweets = twitter_api.search("CodeFirstGirls")
-#
-#	cfg_tweets.each do |tweet|
-#	  puts "#{tweet.user.screen_name}: #{tweet.text}"
-
-#	  erb :template
-
-
-#	end
-
-#end
-
-
-#
-#   twitter_api = Twitter::REST::Client.new do |config|
-# 	  config.consumer_key        = "qHLQaXq1TvWuU6tCYqhcfTP53"
-# 	  config.consumer_secret     = "E1027APLZnxFGTx39m6LDfbeT30WrCwTJT5R4Fs4RC8DN7Vmz4"
-# 	  config.access_token        = "29703751-8pefVB9fnoPBcTRnBuTomoUtuN2YE11vuXzwdAvtz"
-# 	  config.access_token_secret = "YBzKoqqvgA04FqIdCmLlNYspS0uw1I5X2mvFDYYFCBb3L"
-# 	end
-# twitter_api.update("#{@name} has booked #{@location} for their #DinnerDate! Why not join them? dinnerdate.com")
-# 	cfg_tweets = twitter_api.search("CodeFirstGirls")
-
-# 	cfg_tweets.each do |tweet|
-# 	  puts "#{tweet.user.screen_name}: #{tweet.text}"
-
-# 	  erb :template
-
-
-# 	end
-
-
-
 
 Pony.options = {
 	:via => 'smtp',
@@ -132,3 +89,4 @@ Pony.mail(message)
 erb :emailconfirm
 
 end
+
