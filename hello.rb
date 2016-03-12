@@ -8,10 +8,10 @@ end
 
 get('/twitter') do
   twitter_api = Twitter::REST::Client.new do |config|
-	  config.consumer_key        = "qHLQaXq1TvWuU6tCYqhcfTP53"
-	  config.consumer_secret     = "E1027APLZnxFGTx39m6LDfbeT30WrCwTJT5R4Fs4RC8DN7Vmz4"
-	  config.access_token        = "29703751-8pefVB9fnoPBcTRnBuTomoUtuN2YE11vuXzwdAvtz"
-	  config.access_token_secret = "YBzKoqqvgA04FqIdCmLlNYspS0uw1I5X2mvFDYYFCBb3L"
+	  config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
+	  config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
+	  config.access_token        = "08683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
+	  config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
 	end
 twitter_api.update("i tweeted")
 	cfg_tweets = twitter_api.search("CodeFirstGirls")
