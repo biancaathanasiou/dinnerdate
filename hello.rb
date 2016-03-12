@@ -47,6 +47,11 @@ get('/emailconfirm') do
 	erb :emailconfirm
 end
 
+get('/confirmation') do
+	erb :confirmation
+end
+
+
 post('/emailconfirm') do
 
 puts params[:name]
