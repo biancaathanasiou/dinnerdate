@@ -1,21 +1,20 @@
 <!doctype html>
+<title>Send a tweet!</title>
+  <script src="jquery.js"></script>
+  <link href='dist/css/bootstrap.css'rel='stylesheet'>
+  <link rel="stylesheet"type="text/css"href="/dinnerdate.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico" />
 
-<head>
 
-<title>Dinner Date</title>
-
-<link href='dist/css/bootstrap.css'rel='stylesheet'>
-<link rel="stylesheet"type="text/css"href="/twitter-page.css">
-<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-<head>
+</head>
 
 <body>
-	<!--Navigation bar-->
+<!--Navigation bar-->
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -30,7 +29,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Plan</a></li>
+        <li class="active"><a href="#">Plan <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Review</a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search">
@@ -45,15 +44,17 @@
 </nav>
 <!--End of navigation bar-->
 
-<header>
 
-<div class="container" id="thanks"><h1>Thank you for sharing! View your tweet on <a href="https://twitter.com">Twitter.</a></h1>
-</header></div>
+  <header>
 
-<div class ="container" id="tweet-button"><a href="https://twitter.com/share" class="twitter-share-button" data-text="I'm using Dinner Date and you should too!" data-via="DinnerDateUK" data-size="large" data-hashtags="DineWithFriends">Tweet</a></div>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <h1>Thanks for sharing!</h1>
 
-</body>
+  </header>
+
+
+
+
+
 
 <div id="footer">
   <div class="social-icon">
@@ -64,3 +65,6 @@
 </div>
 
 </body>
+
+<script src="index.js"></script>
+</html>

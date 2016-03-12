@@ -5,6 +5,13 @@ require 'pony'
 set :server, 'webrick'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
+client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "hCL0HG66BxBElgiBFGKjAygcR"
+    config.consumer_secret     = "piMNreMrGSiJkzYOa3hxncDksJYqrr6gOrhwYgiZyXjQgjvzhd"
+    config.access_token        = "237242667-rIpUFj3y8Gh1NDIdydorNGy98lsxtB3hc0n9Ptxr"
+    config.access_token_secret = "PJYf2VgLCwgPu4mQB3TJXsBRRC2YYbg7dVZC1Tki5Yvrs"
+end
+
 
 get('/') do
   erb :hello1
@@ -27,7 +34,17 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
+get('/twitter') do
 
+erb :twitter
+
+end
+
+# post('/twitter') do
+
+# twitter_api.update("I tweeted!")
+	
+# end
 
 post('/confirmation') do
 
@@ -44,21 +61,7 @@ puts params[:date]
 @date = params[:date]
 @occasion = params[:occasion].downcase
 
-get ('/twitter') do
-    twitter_api = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "hCL0HG66BxBElgiBFGKjAygcR"
-    config.consumer_secret     = "piMNreMrGSiJkzYOa3hxncDksJYqrr6gOrhwYgiZyXjQgjvzhd"
-    config.access_token        = "237242667-rIpUFj3y8Gh1NDIdydorNGy98lsxtB3hc0n9Ptxr"
-    config.access_token_secret = "PJYf2VgLCwgPu4mQB3TJXsBRRC2YYbg7dVZC1Tki5Yvrs"
-  end
 
-twitter_api.update("I tweeted!")
-
-puts twitter_api.update
-
-erb :twitter
-	
-end
 
 # Twitter test
 #   twitter_api = Twitter::REST::Client.new do |config|
@@ -98,6 +101,8 @@ end
 
 
 # 	end
+
+
 
 
 Pony.options = {
