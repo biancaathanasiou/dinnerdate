@@ -26,37 +26,6 @@ twitter_api.update("i tweeted")
 
 end
 
-get('/chefs') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion]
-  erb :chefs
-end
-
-get('/billing') do
-  
-  	erb :billingpage
-
-end
-
-post('/billing') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion].downcase
-erb :billingpage
-
-end
-
 
 get('/venuepg1') do
 	erb :venuepg1
@@ -75,32 +44,21 @@ get('/venuepg4') do
 end
 
 
-get('/confirmation') do
-  erb :confirmation
-end
 
+post('/confirmation') do
 
-
-post('/venues') do
-  puts params[:name]
-  puts params[:email]
-  puts params[:occasion]
-
-
- @email = params[:email]
- @name = params[:name]
- @occasion = params[:occasion].downcase
-erb :venues
-
-end
-
-
-post('/confirm') do
 puts params[:name]
 puts params[:email]
+puts params[:occasion]
+puts params[:guests]
+puts params[:date]
 
-email = params[:email]
+
+@email = params[:email]
 @name = params[:name]
+@guests = params[:guests]
+@date = params[:date]
+@occasion = params[:occasion].downcase
 
 
 #
@@ -139,14 +97,10 @@ Pony.options = {
 
 message = {
 	:from => 'hello@example.com',
-	:to => 'Jess <jess.astbury@hotmail.com>',
-	:subject => 'Your confirmation from Dinner Date #{@name}!',
+	:to => "#{@name} <#{@email}>",
+	:subject => "Your confirmation from Dinner Date, #{@name}!",
 	:headers => { 'Content-Type' => 'text/html' },
 	:body => erb(:email)
-
-
-	#:body => 'Thanks for filling in the form #{@name}!<br/>
-	#Hope you have a great time!'
 }
 
 Pony.mail(message)

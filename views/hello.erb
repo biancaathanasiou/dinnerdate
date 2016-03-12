@@ -1,15 +1,16 @@
 <!doctype html>
 
+<html>
+
 <head>
 
-<title>Plan Your Dinner Party</title>
+  <title>Plan Your Dinner Party</title>
 
-<link href='dist/css/bootstrap.css'rel='stylesheet'>
-<link rel="stylesheet"type="text/css"href="/dinnerdate.css">
-
-<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-<link rel="shortcut icon" href="images/favicon.ico" />
+  <script src="jquery.js"></script>
+  <link href='dist/css/bootstrap.css'rel='stylesheet'>
+  <link rel="stylesheet"type="text/css"href="/dinnerdate.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico" />
 
 
 </head>
@@ -17,9 +18,9 @@
 <body>
 <!--Navigation bar-->
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
+    <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
+     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -49,19 +50,23 @@
 </nav>
 <!--End of navigation bar-->
 
+
   <header>
 
-<% if @name %>
-  <h1>Hello <%= @name %>! Welcome to Dinner Date </h1>
-<% else %>
-  <h1>Hello! Welcome to Dinner Date</h1>
-<% end %>
+    <% if @name %>
+      <h1>Hello <%= @name %>! Welcome to Dinner Date </h1>
+    <% else %>
+      <h1>Hello! Welcome to Dinner Date</h1>
+    <% end %>
 
   </header>
 
+
 <div class="form">
+
   <h2>Plan your party</h2><br/>
-  <form method="post" action="/venues">
+  
+  <form method="post" action="/confirmation">
 
     <label for="name">Name: </label>
     <input type="text" id="name" name="name" value="" placeholder="Sarah Smith" required="required" autofocus="autofocus"/><br/><br/>
@@ -75,184 +80,235 @@
     <label for="guests">Number of guests: </label>
     <input type="number" id="guests" name="guests" value="" placeholder="8" required="required"/><br/><br/>
 
-    <label for="location">Location: </label>
-    <input type="text" id="location" name="location" value="" placeholder="Hackney" required="required"/><br/><br/>
+    <label for="date">Date: </label>
+    <input type="text" id="date" name="date" value="" placeholder="29/06/16" required="required"/><br/><br/>
 
-    <input type="submit" value="submit" id="submit-button">
-  </form><br/>
 </div>
 
 <!--VENUE PAGE-->
+<<<<<<< HEAD
 <!--<p>----------</p>-->
 
 <header>
+=======
 
-<h1>Hi <%= @name %>! Let's get planning your <%= @occasion %><br/><br>First, pick your venue...</h1>
-</header>
+<div class="comment">
+    <h1>Hi <%= @name %>! Let's get planning your event.<br/><br>First, pick your venue...</h1>
+</div>
+>>>>>>> origin/master
 
-<div id = "venuelist"
+<div id = "venuelist">
+
+
+<!-- <form class="form-horizontal">-->
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Multiple Checkboxes (inline) -->
+
+
+
 
 <div class="container">
   <div class="row">
 
-<div class = "venue1 col-md-5">
+<div class="form-group1">
 
-  <a href="/chefs">
-
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      
+<div class = "venue1 col-md-10">
 <img src = "images/forum.jpg">
-    <h2>Forum Bar ~ East</h2>
+<h2>Forum Bar ~ East</h2>
 
-    <a href="/venuepg1">
-    <h3>More info</h3>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Find out more
+</button>
 
-  </a>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+     <p> helloooo</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </div>
 
-  </a>
+    </label>
 
-<div class = "venue1 col-md-5 col-md-offset-1">
 
-    <a href="/chefs">
-
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      
+<div class = "venue1 col-md-10">
 <img src = "images/drinkshopdo.jpg">
 <h2>Drink Shop Do ~ North</h2>
-
-</a>
-
-  <a href="/venuepg2">
-    <h3>More info</h3>
-
-  </a>
-
-
-
 </div>
 
-<div class = "venue1 col-md-5">
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
 
-  <a href="/chefs">
-
+<div class = "venue1 col-md-10">
 <img src = "images/tikibar.jpg">
 <h2>Pacific Cove ~ West</h2>
-
-</a>
-
-  <a href="/venuepg3">
-    <h3>More info</h3>
-
-  </a>
-
-
 </div>
 
-<div class = "venue1 col-md-5 col-md-offset-1">
 
-<a href="/chefs">
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
 
+<div class = "venue1 col-md-10">
 <img src = "images/wishart.jpg">
 <h2>Wishart ~ South</h2>
+</div>
 
-</a>
 
-  <a href="/venuepg4">
-    <h3>More info</h3>
+<div class="form-group1">
+<input id="checkboxid" type="checkbox" class="css-checkbox">
+<label for="checkboxid" class="css-label"></label>
+</div>
 
-  </a>
+
+
+
+    </label>
+  </div>
+</div>
+
+
+</fieldset>
+<!-- </form>-->
+
 
 
 </div>
 
-</div>
 
 </div>
 
-<header>
+
+
+<!-- CHEF SECTION-->
+
+
+<div id = "venuelist">
+
+
+
+<!-- <form class="form-horizontal">-->
+<fieldset>
+
+<!-- Form Name -->
+
+
+<!-- Multiple Checkboxes (inline) -->
+
+
+<!--CHEF PAGE-->
+
+<div class="comment">
 
 <h1>Good choice <%= @name %>!<br/>Now, let's pick your chef for the evening</h1>
-</header>
+</div><br/><br/><br/>
 
-<div id = "venuelist"
 
 <div class="container">
   <div class="row">
 
-<div class = "venue1 col-md-5">
+<div class="form-group">
 
-  <a href="/billing">
 
+    <label class="checkbox-inline" for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      
+<div class = "venue1 col-md-10">
 <img src = "images/thathungrychef.jpg">
 <h2>That Hungry Chef ~ Indian/Fusion</h2>
-
-</a>
-
 </div>
 
-<div class = "venue1 col-md-5 col-md-offset-1">
+    </label>
 
-  <a href="/billing">
-
+    <label class="checkbox-inline" for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      
+<div class = "venue1 col-md-10">
 <img src = "images/alittlelusciousness.jpg">
 <h2>A Little Lusciousness ~ British</h2>
-
-</a>
-
 </div>
 
-<div class = "venue1 col-md-5">
+    </label>
+    <label class="checkbox-inline" for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
 
-  <a href="/billing">
-
+<div class = "venue1 col-md-10">
 <img src = "images/nordish.jpg">
 <h2>M&M ~ Nordish</h2>
-
-</a>
-
 </div>
 
-<div class = "venue1 col-md-5 col-md-offset-1">
 
-  <a href="/billing">
+    </label>
+    <label class="checkbox-inline" for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
 
+<div class = "venue1 col-md-10">
 <img src = "images/gabriel.jpg">
 <h2>The Water House Project ~ British</h2>
+</div>
 
-</a>
+
+
+    </label>
+  </div>
+</div>
+
+
+</fieldset>
+<!-- </form>-->
+
+
 
 </div>
 
 
 </div>
 
-</div>
 
-  <header>
+<!--BILLING PAGE-->
 
-  <h1>Well chosen <%= @name %>!</h1>
-
-  </header>
-
-  <br/><h2>Check details below and confirm your booking...</h2>
-
-<div class="form">
-
-    <form method="post" action="/confirm">
-
-<p>
-  <br/><strong>NAME: <%=@name %></strong><br/><br/> <!--Anyone know why this name isn't showing up?-->
-  <strong>DATE: <%= @occasion %></strong><br/><br/><!-- We should probs add this on the form! -->
-  <strong>VENUE COST: </strong>(cost)<br/><br/>
-  <strong>CHEF COST:</strong> (cost) <br/><br/> <!-- Could be cost * no. of guests if we're feeling fancy -->
-  <strong>TOTAL COST:</strong>  (venue cost + check cost)<br/><br/>
-</p>
-
+<div class="comment">
+<h1>All Chosen?</h1></div>
+<br/><br/>
+<h2>Click below to submit your booking request...</h2>
     <input type="submit" value="Confirm" id="submit-button">
+
+     </form>
+
   <br/><br/>
-</div>
+
+
 
 <h2><a href="/confirmation">Share the news with your friends!</a></h2>
 <br/><br/>
+
+
 
 <div id="footer">
   <div class="social-icon">
@@ -263,3 +319,7 @@
 </div>
 
 </body>
+
+<script src="index.js"></script>
+
+</html>
