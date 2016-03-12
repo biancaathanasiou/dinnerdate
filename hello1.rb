@@ -1,5 +1,5 @@
-require 'twitter'
 require 'sinatra'
+require 'twitter'
 require 'pony'
 
 set :server, 'webrick'
@@ -10,6 +10,7 @@ client = Twitter::REST::Client.new do |config|
     config.consumer_secret     = "piMNreMrGSiJkzYOa3hxncDksJYqrr6gOrhwYgiZyXjQgjvzhd"
     config.access_token        = "237242667-rIpUFj3y8Gh1NDIdydorNGy98lsxtB3hc0n9Ptxr"
     config.access_token_secret = "PJYf2VgLCwgPu4mQB3TJXsBRRC2YYbg7dVZC1Tki5Yvrs"
+
 end
 
 
@@ -34,17 +35,17 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
+post('/twitter') do
+
+client.update("I tweeted!")
+	
+end
+
 get('/twitter') do
 
 erb :twitter
 
 end
-
-# post('/twitter') do
-
-# twitter_api.update("I tweeted!")
-	
-# end
 
 post('/confirmation') do
 
