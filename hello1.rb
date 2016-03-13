@@ -27,6 +27,22 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
+get('/twitter') do
+
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
+    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
+    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
+    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
+
+end
+
+client.update('This is a test.')
+
+erb :twitter
+
+end
+
 get('/emailconfirm') do
 	@email = params[:email]
 	@name = params[:name]
@@ -40,22 +56,6 @@ get('/emailconfirm') do
 	puts total_cost
 
 	erb :emailconfirm
-end
-
-get('/twitter') do
-
-	client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
-    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
-    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
-    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
-
-end
-
-client.update('I tweeted!')
-
-erb :twitter
-
 end
 
 post('/confirmation') do
