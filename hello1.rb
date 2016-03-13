@@ -10,23 +10,6 @@ get('/') do
   erb :hello1
 end
 
-
-get('/venuepg1') do
-	erb :venuepg1
-end
-
-get('/venuepg2') do
-	erb :venuepg2
-end
-
-get('/venuepg3') do
-	erb :venuepg3
-end
-
-get('/venuepg4') do
-	erb :venuepg4
-end
-
 get('/twitter') do
 
 	client = Twitter::REST::Client.new do |config|
@@ -45,6 +28,37 @@ erb :twitter
 
 end
 
+get('/venuepg1') do
+	erb :venuepg1
+end
+
+get('/venuepg2') do
+	erb :venuepg2
+end
+
+get('/venuepg3') do
+	erb :venuepg3
+end
+
+get('/venuepg4') do
+	erb :venuepg4
+end
+
+get('/emailconfirm') do
+	@email = params[:email]
+	@name = params[:name]
+	@guests = params[:guests]
+	@date = params[:date]
+	@occasion = params[:occasion].downcase
+	@inlineRadioOptions1 = params[:inlineRadioOptions1]
+	@inlineRadioOptions2 = params[:inlineRadioOptions2]
+	
+	total_cost = @inlineRadioOptions1 + @inlineRadioOptions2
+	puts total_cost
+	
+	erb :emailconfirm
+end
+
 
 post('/confirmation') do
 
@@ -53,13 +67,16 @@ puts params[:email]
 puts params[:occasion]
 puts params[:guests]
 puts params[:date]
-
+puts params[:inlineRadioOptions1]
+puts params[:inlineRadioOptions2]
 
 @email = params[:email]
 @name = params[:name]
 @guests = params[:guests]
 @date = params[:date]
 @occasion = params[:occasion].downcase
+@inlineRadioOptions1 = params[:inlineRadioOptions1]
+@inlineRadioOptions2 = params[:inlineRadioOptions2]
 
 Pony.options = {
 	:via => 'smtp',
