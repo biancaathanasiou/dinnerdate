@@ -8,9 +8,10 @@
 ----------<br/><br/>
 <strong>NAME:</strong> <%=@name %><br/><br/> 
 <strong>DATE:</strong> <%= @date %><br/><br/>
-<strong>VENUE COST:</strong>(cost)<br/><br/>
-<strong>CHEF COST:</strong>cost x <%=@guests %> (cost) <br/><br/>
-<strong>TOTAL COST:</strong>(venue cost + check cost)<br/><br/>
+<strong>GUESTS:</strong> <%= @guests %><br/><br/>
+<strong>VENUE COST:</strong>£<%= @inlineRadioOptions1 %><br/><br/>
+<strong>CHEF COST:</strong>£<%= @inlineRadioOptions2 %><br/><br/>
+<strong>TOTAL COST:</strong>(venue cost + chef cost)<br/><br/>
 ----------<br/><br/>
 <p>Availability is now being checked. We'll be in touch within two working days to confirm your booking!</p>
 </center>

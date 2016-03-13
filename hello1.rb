@@ -10,6 +10,23 @@ get('/') do
   erb :hello1
 end
 
+get('/twitter') do
+
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
+    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
+    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
+    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
+
+end
+
+@name = params[:name]
+
+client.update('#{@name} has booked for their #DinnerDate! Why not join them at http://dinnerdate.com')
+
+erb :twitter
+
+end
 
 get('/venuepg1') do
 	erb :venuepg1
@@ -28,25 +45,18 @@ get('/venuepg4') do
 end
 
 get('/emailconfirm') do
+	@email = params[:email]
+	@name = params[:name]
+	@guests = params[:guests]
+	@date = params[:date]
+	@occasion = params[:occasion].downcase
+	@inlineRadioOptions1 = params[:inlineRadioOptions1]
+	@inlineRadioOptions2 = params[:inlineRadioOptions2]
+	
+	total_cost = @inlineRadioOptions1 + @inlineRadioOptions2
+	puts total_cost
+	
 	erb :emailconfirm
-end
-
-get('/twitter') do
-
-	client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
-    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
-    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
-    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
-
-end
-
-@name = params[:name]
-
-client.update('#{@name} has booked for their #DinnerDate! Why not join them at http://dinnerdate.com')
-
-erb :twitter
-
 end
 
 
@@ -66,7 +76,7 @@ puts params[:inlineRadioOptions2]
 @date = params[:date]
 @occasion = params[:occasion].downcase
 @inlineRadioOptions1 = params[:inlineRadioOptions1]
-@inlineRadioOptions1 = params[:inlineRadioOptions2]
+@inlineRadioOptions2 = params[:inlineRadioOptions2]
 
 Pony.options = {
 	:via => 'smtp',
