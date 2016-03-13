@@ -9,21 +9,6 @@ get('/') do
   erb :hello
 end
 
-get('/venuepg1') do
-	erb :venuepg1
-end
-
-get('/venuepg2') do
-	erb :venuepg2
-end
-
-get('/venuepg3') do
-	erb :venuepg3
-end
-
-get('/venuepg4') do
-	erb :venuepg4
-end
 
 get('/twitter') do
 
