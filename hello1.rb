@@ -109,7 +109,7 @@ Pony.mail(message)
 
 end
 
-client.update("#{@name} is going to #{@inlineRadioOptions1} with #DinnerDate! http://dinnerdate.co.uk")
+client.update("#{@name} is going to #{@inlineRadioOptions1} - with #DinnerDate! http://dinnerdate.co.uk")
 
 erb :emailconfirm
 
