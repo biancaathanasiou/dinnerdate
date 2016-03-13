@@ -88,5 +88,6 @@ Pony.mail(message)
 
 erb :emailconfirm
 
+
 end
 
