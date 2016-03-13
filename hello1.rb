@@ -27,6 +27,10 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
+get('/emailconfirm') do
+	erb :emailconfirm
+end
+
 get('/twitter') do
 
 	client = Twitter::REST::Client.new do |config|
@@ -53,13 +57,16 @@ puts params[:email]
 puts params[:occasion]
 puts params[:guests]
 puts params[:date]
-
+puts params[:inlineRadioOptions1]
+puts params[:inlineRadioOptions2]
 
 @email = params[:email]
 @name = params[:name]
 @guests = params[:guests]
 @date = params[:date]
 @occasion = params[:occasion].downcase
+@inlineRadioOptions1 = params[:inlineRadioOptions1]
+@inlineRadioOptions1 = params[:inlineRadioOptions2]
 
 Pony.options = {
 	:via => 'smtp',
