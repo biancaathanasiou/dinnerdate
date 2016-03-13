@@ -27,21 +27,21 @@ get('/venuepg4') do
 	erb :venuepg4
 end
 
-get('/twitter') do
+#get('/twitter') do
 
-	client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
-    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
-    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
-    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
+#	client = Twitter::REST::Client.new do |config|
+#    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
+#    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
+#    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
+#    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
 
-end
+#end
 
-client.update('This is a test.')
+#client.update("#{@name} This is a test.")
 
-erb :twitter
+#erb :twitter
 
-end
+#end
 
 get('/emailconfirm') do
 	@email = params[:email]
@@ -100,6 +100,16 @@ message = {
 }
 
 Pony.mail(message)
+
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
+    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
+    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
+    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
+
+end
+
+client.update("#{@name} is going to #{@inlineRadioOptions1} with #DinnerDate! http://dinnerdate.co.uk")
 
 erb :emailconfirm
 
