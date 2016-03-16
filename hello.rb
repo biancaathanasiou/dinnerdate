@@ -5,36 +5,57 @@ require 'pony'
 set :server, 'webrick'
 OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
+
 get('/') do
-  erb :hello
+  erb :hello1
 end
+
+
+get('/venuepg1') do
+	erb :venuepg1
+end
+
+get('/venuepg2') do
+	erb :venuepg2
+end
+
+get('/venuepg3') do
+	erb :venuepg3
+end
+
+get('/venuepg4') do
+	erb :venuepg4
+end
+
+#get('/twitter') do
+
+#	client = Twitter::REST::Client.new do |config|
+#    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
+#    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
+#    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
+#    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
+
+#end
+
+#client.update("#{@name} This is a test.")
+
+#erb :twitter
+
+#end
 
 get('/emailconfirm') do
+	@email = params[:email]
+	@name = params[:name]
+	@guests = params[:guests]
+	@date = params[:date]
+	@occasion = params[:occasion].downcase
+	@inlineRadioOptions1 = params[:inlineRadioOptions1]
+	@inlineRadioOptions2 = params[:inlineRadioOptions2]
+	
+	total_cost = @inlineRadioOptions1 + @inlineRadioOptions2
+	puts total_cost
+
 	erb :emailconfirm
-end
-
-get('/confirmation') do
-	erb :confirmation
-end
-
-get('/twitter') do
-
-	client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "dKTsPg7cdEWuQPklhf2PJtb0G"
-    config.consumer_secret     = "1af5zynv8FERYpe33YJTwgHl7nqF1J5jCTezwWMIiiHRLoesgu"
-    config.access_token        = "708683110150479873-OhnKKH26wNfJnyysgTp4iQJvNVoIkj6"
-    config.access_token_secret = "bnDq58mgWaMspum3tHy9dCbCK4RMMZimbdM3vwChzanVM"
-
-end
-
-puts params[:name]
-
-@name = params[:name]
-
-client.update('#{@name} has booked for their #DinnerDate! Why not join them at http://dinnerdate.com')
-
-erb :twitter
-
 end
 
 post('/confirmation') do
@@ -47,14 +68,13 @@ puts params[:date]
 puts params[:inlineRadioOptions1]
 puts params[:inlineRadioOptions2]
 
-
 @email = params[:email]
 @name = params[:name]
 @guests = params[:guests]
 @date = params[:date]
 @occasion = params[:occasion].downcase
 @inlineRadioOptions1 = params[:inlineRadioOptions1]
-@inlineRadioOptions1 = params[:inlineRadioOptions2]
+@inlineRadioOptions2 = params[:inlineRadioOptions2]
 
 Pony.options = {
 	:via => 'smtp',
@@ -81,6 +101,20 @@ message = {
 
 Pony.mail(message)
 
-erb :emailconfirm
+	client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = "kRtJAu9Kc6ZJxGQifYssXMLOB"
+    config.consumer_secret     = "DWoPT732i7NrzEHJSMDlIex4vzCtQ3JiybEjmHNB5vdsW9uY0w"
+    config.access_token        = "708683110150479873-MZIUuxXeC9l3sGmn81VmyXOjQDNugUc"
+    config.access_token_secret = "M8RpeusI18PPIgeBit80rBwB7CLwNJhyv6k0v9lR9h0Ab"
 
 end
+
+client.update("#{@name} is going to #{@inlineRadioOptions1} - with #DinnerDate! http://dinnerdate.co.uk")
+
+erb :emailconfirm
+
+
+end
+
+
+
